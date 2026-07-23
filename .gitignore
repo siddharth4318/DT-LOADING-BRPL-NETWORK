@@ -50,7 +50,7 @@ Desktop.ini
 # Logs
 *.log
 *.txt
-
+!requirements.txt
 # Generated CSV outputs
 *.csv
 
