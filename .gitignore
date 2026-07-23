@@ -1,0 +1,58 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Temporary files
+*.tmp
+*.log
+.tmp/
+
+# DuckDB temporary files
+duckdb_tmp/
+dashboard_duckdb_tmp/
+
+# Dashboard cache
+dashboard_cache/
+
+# Large datasets
+csv 2021-2026/
+Raw Files monthly/
+PALAM/
+pipeline_output/
+
+# Databases
+*.duckdb
+
+# Parquet files
+*.parquet
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+*.txt
+
+# Generated CSV outputs
+*.csv
+
+# Monthly output
+sdo_2652_monthly_detail/
