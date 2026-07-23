@@ -49,37 +49,44 @@ Interactive Streamlit Dashboard
 
 ## Dashboard Modules
 
-### 1. Feeder Analytics
-- Distribution transformer overview
-- Feeder-level statistics
+### 1. Functional Line (FL) Analytics
+
+- Functional Line overview
+- Distribution Transformer statistics
 - Load summaries
 
 ### 2. Load Curve Analysis
+
 - Daily load profile visualization
 - Historical comparison
 - Peak demand trends
 
 ### 3. Peak kVA Analysis
+
 - Peak demand identification
 - Transformer utilization
 - Capacity assessment
 
 ### 4. CAGR Analysis
-- Historical growth analysis
+
+- Historical load growth analysis
 - Long-term demand trends
-- Feeder-wise comparison
+- Functional Line-wise comparison
 
 ### 5. Sustained Loading
+
 - Continuous overload identification
 - Loading duration analysis
 - Capacity planning support
 
 ### 6. Forecasting
+
 - Time-series load forecasting
 - Demand prediction framework
 - Weather-based forecasting support (under development)
 
 ### 7. Anomaly Detection
+
 - Missing data detection
 - Sudden load variation
 - Voltage and current inconsistencies
@@ -135,13 +142,13 @@ verify_clean_data.py
 Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/BRPL-DTS.git
+git clone https://github.com/siddharth4318/DT-LOADING-BRPL-NETWORK.git
 ```
 
 Move into the project directory
 
 ```bash
-cd BRPL-DTS
+cd DT-LOADING-BRPL-NETWORK
 ```
 
 Install dependencies
@@ -177,3 +184,5 @@ streamlit run dashboard/app.py
 - Explainable AI for anomaly detection
 - Automated report generation
 - Cloud deployment
+
+---
