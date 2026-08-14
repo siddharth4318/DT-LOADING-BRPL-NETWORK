@@ -15,7 +15,7 @@ import os
 # ---------------------------------------------------------------------------
 # PATHS -- must match OUTPUT_DIR in dt_pipeline.py
 # ---------------------------------------------------------------------------
-PIPELINE_OUTPUT_DIR = r"C:\Users\Siddharth Jain\Documents\BRPL DTS\pipeline_output"
+PIPELINE_OUTPUT_DIR = r"D:\New dashboard code\DT DATA DASHBOARD V1\pipeline_output"
 
 CLEAN_DATA_DIR = os.path.join(PIPELINE_OUTPUT_DIR, "clean_data")
 RAW_DATA_DIR = os.path.join(PIPELINE_OUTPUT_DIR, "raw_parquet")

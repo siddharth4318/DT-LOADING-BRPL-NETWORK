@@ -174,10 +174,10 @@ LOGIC_VERSION = "4"          # v1: base hard/threshold rules. v2: + MISSING_KWH,
                              # dedup moved before joins, Stage 4 and Stage 5/6 rewritten as single-
                              # pass (struct-list UNNEST) instead of many UNION ALL scans. Same outputs.
 
-RAW_MONTHLY_FOLDER = r"C:\Users\Siddharth Jain\Documents\BRPL DTS\Raw Files monthly"
-MASTER_FOLDER = r"C:\Users\Siddharth Jain\Documents\BRPL DTS\csv 2021-2026"
-OUTPUT_DIR = r"C:\Users\Siddharth Jain\Documents\BRPL DTS\pipeline_output"
-TEMP_DIR = r"C:\Users\Siddharth Jain\Documents\BRPL DTS\duckdb_tmp"        # point at disk with most free space
+RAW_MONTHLY_FOLDER = r"D:\New dashboard code\DT DATA DASHBOARD V1\RAW FILES"
+MASTER_FOLDER = r"D:\New dashboard code\DT DATA DASHBOARD V1\csv 2021-2026"
+OUTPUT_DIR = r"D:\New dashboard code\DT DATA DASHBOARD V1\pipeline_output"
+TEMP_DIR = r"D:\New dashboard code\DT DATA DASHBOARD V1\duckdb_tmp"        # point at disk with most free space
 DB_PATH = os.path.join(OUTPUT_DIR, "pipeline.duckdb")                     # disk-backed, not in-memory
 STATUS_DIR = os.path.join(OUTPUT_DIR, "month_status") 
                     # per-month "done" markers
@@ -226,14 +226,11 @@ PCT_BAND = 0.05
 
 # PERF: capped at 6 -- on a 16GB box, letting DuckDB use every core just
 # means more concurrent hash tables / more spilling, not more speed.
-THREADS = min(os.cpu_count() or 4, 6)
-MEMORY_LIMIT = "12GB"   # bumped from 10GB -- Stage 1's pandas/Excel load is now cached (skipped on
-                        # repeat runs), so there's less peak memory pressure to leave headroom for
-MAX_TEMP_DIR_SIZE = "40GiB"
+THREADS = 8
+MEMORY_LIMIT = "400GB"
+MAX_TEMP_DIR_SIZE = "500GiB"
 PARQUET_COMPRESSION = "SNAPPY"
-EXPORT_ROW_GROUP_SIZE = 500_000   # PERF: was 250,000 -- larger row groups suit the full-column-scan
-                                   # access pattern used by Streamlit/DuckDB/Polars/PyArrow downstream
-
+EXPORT_ROW_GROUP_SIZE = 500_000
 
 def get_con():
     os.makedirs(OUTPUT_DIR, exist_ok=True)

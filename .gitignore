@@ -56,3 +56,8 @@ Desktop.ini
 
 # Monthly output
 sdo_2652_monthly_detail/
+streamlit_offline_packages/
+
+dashboard/__pycache__/
+
+dashboard/.tmp/

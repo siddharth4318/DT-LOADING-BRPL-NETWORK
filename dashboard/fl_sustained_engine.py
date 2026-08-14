@@ -44,8 +44,8 @@ SUSTAINED_MONTHLY_CACHE_DIR = os.path.join(cfg.DASH_CACHE_DIR, "sustained_loadin
 # Concurrency settings for sustained loading (memory-intensive)
 # Reduced from min(cpu_count, 6) to min(cpu_count-1, 4) to prevent memory
 # thrashing when DuckDB workers compete for RAM.
-SUSTAINED_CONCURRENCY = max(1, min(os.cpu_count() - 1 if os.cpu_count() else 2, 4))
-SUSTAINED_DUCKDB_MEMORY_GB = 4
+SUSTAINED_CONCURRENCY = 1
+SUSTAINED_DUCKDB_MEMORY_GB = 16
 
 
 def _monthly_cache_path(ym, prefix="raw"):

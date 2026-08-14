@@ -274,7 +274,7 @@ def register_granularity_table(con, granularity_df):
     'meter_granularity' so every SQL query in this bundle can LEFT JOIN
     against it by MTR_NO."""
     if granularity_df is None or granularity_df.empty:
-        granularity_df = pd.DataFrame({"MTR_NO": pd.Series(dtype=str), "SLOT_MINUTES": pd.Series(dtype=int)})
+        granularity_df = pd.DataFrame({"MTR_NO": pd.Series(dtype="object"), "SLOT_MINUTES": pd.Series(dtype="int64")})
     con.register("meter_granularity_src", granularity_df)
     con.execute("CREATE OR REPLACE TEMP TABLE meter_granularity AS SELECT * FROM meter_granularity_src")
 
